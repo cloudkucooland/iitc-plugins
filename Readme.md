@@ -1,7 +1,9 @@
 # Random plugins for IITC
 
 # building an individual plugin
+
 edit localbuildsettings.py to your needs
+
 % ```build_plugin.py plugins/pioneer.js```
 
 # Plugins

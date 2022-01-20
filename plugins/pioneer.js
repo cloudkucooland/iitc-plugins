@@ -37,7 +37,7 @@ function pioneer() {
 
   // for each of the full wasabee-portals, add a "CapturePortalMarker"
   for (const p of portals) {
-	// ignore portals that already have a "CapturePortalMarker" market set
+    // ignore portals that already have a "CapturePortalMarker" market set
     if (
       window.plugin.wasabee._selectedOp.markers.find(
         (marker) =>

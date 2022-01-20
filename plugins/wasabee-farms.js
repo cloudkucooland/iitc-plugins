@@ -18,10 +18,14 @@ function setup() {
     .appendTo("#toolbox");
 }
 
-// mostly just copied from IITC's plugins/farms-find.js
+// I'm leaving this function (mostly) unedited from IITC's so that if I get accused of scraping,
+// I can demonstrate easily that the logic is exactly the same as IITC's farms-find plugin
+// If I were to clean this function up, I'd use 'for (const p of Object.keys(window.portals))' here
+// and dump this jQuery nonsense. Likwise, the rest of the 'for (;;++); loops should be
+// 'for (const x of N)' since memory access speeds are much better that way--not my code, not my garbage
 function markfarms() {
   possibleFarmPortals = [];
-  window.plugin.farmFind.levelLayerGroup.clearLayers();
+
   $.each(window.portals, function (i, portal) {
     if (
       window.plugin.farmFind.getNearbyPortalCount(portal) >
@@ -113,7 +117,6 @@ function mark(found) {
   const raw = [];
   for (const p of found) {
     if (p.options.data.hasOwnProperty("title")) {
-      // e is an object type defined by Wasabee, a "raw" portal
       var e = {
         id: p.options.guid,
         lat: (p.options.data.latE6 / 1e6).toFixed(6),
@@ -135,6 +138,7 @@ function mark(found) {
           marker.portalId === p.id && marker.type === "FarmPortalMarker"
       )
     ) {
+      // don't add duplicates
       continue;
     }
     window.plugin.wasabee._selectedOp.addPortal(p);

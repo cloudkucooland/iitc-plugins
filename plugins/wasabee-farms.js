@@ -51,7 +51,7 @@ function markfarms() {
       circle.setRadius(window.plugin.farmFind.Radius);
       portalsInFarm.push(thisPortal);
       for (p = 0; p < possibleFarmPortals.length; p++) {
-		alreadyInAnotherFarm = false;
+        alreadyInAnotherFarm = false;
         const portalLoc = new google.maps.LatLng(
           possibleFarmPortals[p].getLatLng().lat,
           possibleFarmPortals[p].getLatLng().lng
@@ -93,9 +93,9 @@ function markfarms() {
   }
 
   for (farm = 0; farm < farms.length; farm++) {
-   mark(farms[farm]);
+    mark(farms[farm]);
   }
-};
+}
 
 function findUnique(farm) {
   const unique = [];
@@ -107,7 +107,7 @@ function findUnique(farm) {
     if (!found) unique.push(farm[p]);
   }
   return unique;
-};
+}
 
 function mark(found) {
   const raw = [];

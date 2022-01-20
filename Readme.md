@@ -8,3 +8,4 @@ edit localbuildsettings.py to your needs
 
 # Plugins
 * pioneer - requires wasabee, marks portals-in-view which have not been captured to help earn the badges
+* wasabee-farms - requires wasabee & IITC's farms-find plugin; adds wasabee's FarmPortalMarker to discovered farm portals
